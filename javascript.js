@@ -1,13 +1,25 @@
-const tabs = ['home', 'avatar', 'discover', 'friends'];
-let activeTab = 0;
+const startup = document.getElementById('startup');
+const loading = document.getElementById('loading');
+const dashboard = document.getElementById('dashboard');
+const music = document.getElementById('bgMusic');
 
+// Transition from Start to Loading
 window.addEventListener('keydown', (e) => {
-    if (e.key === 'rb' || e.key === 'ArrowRight') { // RB on controller
-        switchTab(activeTab + 1);
+    if (startup.classList.contains('active')) {
+        music.play();
+        startup.classList.remove('active');
+        loading.classList.add('active');
+
+        // Stay on loading for 3 seconds, then show Dashboard
+        setTimeout(() => {
+            loading.classList.remove('active');
+            dashboard.classList.add('active');
+        }, 3000);
     }
 });
 
-function switchTab(index) {
-    // Hide current section, show new section
-    // Update the UI to look like 1000016084.jpg
+// Launch Roblox Player
+function launchGame(id) {
+    // This uses the URI protocol to wake up the Windows Roblox App
+    window.location.href = `roblox-player:1+launchmode:play+placeid:${id}`;
 }
