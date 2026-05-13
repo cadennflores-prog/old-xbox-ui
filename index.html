@@ -1,35 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Launching Xbox Experience...</title>
+    <title>Xbox Launcher</title>
     <style>
-        body { 
-            background: #000; 
-            color: #107C10; 
-            display: flex; 
-            flex-direction: column;
-            justify-content: center; 
-            align-items: center; 
-            height: 100vh; 
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-        }
-        .loading-text { font-size: 24px; letter-spacing: 2px; }
+        body { background: #000; margin: 0; display: flex; align-items: center; justify-content: center; height: 100vh; cursor: pointer; }
+        .bg { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+        .prompt { color: white; font-family: 'Segoe UI', sans-serif; font-size: 2rem; z-index: 10; text-shadow: 0 0 15px #107C10; }
     </style>
 </head>
-<body>
-    <img src="1000016083.jpg" style="position:fixed; width:100%; height:100%; object-fit:cover; z-index:-1; opacity:0.5;">
-    <h1 class="loading-text">LAUNCHING XBOX...</h1>
-    <p>If Roblox doesn't open, <a href="roblox-player:1+launchmode:play+placeid:13086985452" style="color:white;">click here</a>.</p>
+<body onclick="launch()">
+    <!-- Your loading image -->
+    <img src="1000016083.jpg" class="bg">
+    <div class="prompt">CLICK ANYWHERE TO START XBOX</div>
 
     <script>
-        // This triggers the launch the second the page loads
-        window.location.href = "roblox-player:1+launchmode:play+placeid:13086985452";
-
-        // Backup: Launch if the user clicks anywhere on the screen
-        window.onclick = function() {
+        function launch() {
+            // The official URI protocol to launch a specific game
             window.location.href = "roblox-player:1+launchmode:play+placeid:13086985452";
-        };
+        }
     </script>
 </body>
 </html>
