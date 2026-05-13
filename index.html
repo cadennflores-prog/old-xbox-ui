@@ -1,28 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Background Music -->
-    <audio autoplay loop>
-        <source src="xbox-music.mp3" type="audio/mpeg">
-    </audio>
-
-    <div class="launcher-container">
-        <h1>XBOX ROBLOX</h1>
-        <div class="game-list">
-            <!-- Replace XXXXXX with your favorite Place IDs -->
-            <button onclick="launchRoblox('1818')">Classic Crossroads</button>
-            <button onclick="launchRoblox('606849621')">Jailbreak</button>
-        </div>
-    </div>
-
-    <script>
-        function launchRoblox(placeId) {
-            // This protocol triggers the installed Roblox app on Windows
-            window.location.href = `roblox-player:1+launchmode:play+placeid:${placeId}`;
-        }
-    </script>
-</body>
-</html>
+<div id="startup-screen">
+    <img src="1000016082.jpg" class="bg-animate">
+    <div class="start-text">Press <span class="btn-a">A</span> to Begin</div>
+</div>
