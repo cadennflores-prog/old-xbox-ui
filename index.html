@@ -1,47 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roblox Xbox Launcher</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Launching Xbox Experience...</title>
+    <style>
+        body { 
+            background: #000; 
+            color: #107C10; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+        }
+        .loading-text { font-size: 24px; letter-spacing: 2px; }
+    </style>
 </head>
 <body>
-    <!-- Background Music -->
-    <audio id="bgMusic" loop src="xbox-startup.mp3"></audio>
+    <img src="1000016083.jpg" style="position:fixed; width:100%; height:100%; object-fit:cover; z-index:-1; opacity:0.5;">
+    <h1 class="loading-text">LAUNCHING XBOX...</h1>
+    <p>If Roblox doesn't open, <a href="roblox-player:1+launchmode:play+placeid:13086985452" style="color:white;">click here</a>.</p>
 
-    <!-- Phase 1: Press A to Begin (1000016082.jpg) -->
-    <div id="startup" class="screen active">
-        <img src="1000016082.jpg" class="bg">
-        <div class="overlay">
-            <h2 class="blink">Press <span class="green-btn">A</span> to Begin</h2>
-        </div>
-    </div>
+    <script>
+        // This triggers the launch the second the page loads
+        window.location.href = "roblox-player:1+launchmode:play+placeid:13086985452";
 
-    <!-- Phase 2: Loading (1000016083.jpg) -->
-    <div id="loading" class="screen">
-        <img src="1000016083.jpg" class="bg">
-        <div class="spinner"></div>
-    </div>
-
-    <!-- Phase 3: Main Dashboard (1000016084.jpg) -->
-    <div id="dashboard" class="screen">
-        <img src="1000016084.jpg" class="bg">
-        <nav class="top-nav">
-            <span class="active">Home</span>
-            <span>Avatar</span>
-            <span>Discover</span>
-            <span>Friends</span>
-        </nav>
-        
-        <div class="main-content">
-            <!-- This button launches the URL from 2ee4712f-4aae-4b96-adf0-bce6aa8aaca6 -->
-            <button class="launch-btn" onclick="launchGame('13086985452')">
-                JOIN XBOX EXPERIENCE
-            </button>
-        </div>
-    </div>
-
-    <script src="app.js"></script>
+        // Backup: Launch if the user clicks anywhere on the screen
+        window.onclick = function() {
+            window.location.href = "roblox-player:1+launchmode:play+placeid:13086985452";
+        };
+    </script>
 </body>
 </html>
