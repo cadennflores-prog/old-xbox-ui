@@ -1,4 +1,47 @@
-<div id="startup-screen">
-    <img src="1000016082.jpg" class="bg-animate">
-    <div class="start-text">Press <span class="btn-a">A</span> to Begin</div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Xbox Launcher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="bgMusic" loop src="xbox-startup.mp3"></audio>
+
+    <!-- Phase 1: Press A to Begin (1000016082.jpg) -->
+    <div id="startup" class="screen active">
+        <img src="1000016082.jpg" class="bg">
+        <div class="overlay">
+            <h2 class="blink">Press <span class="green-btn">A</span> to Begin</h2>
+        </div>
+    </div>
+
+    <!-- Phase 2: Loading (1000016083.jpg) -->
+    <div id="loading" class="screen">
+        <img src="1000016083.jpg" class="bg">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Phase 3: Main Dashboard (1000016084.jpg) -->
+    <div id="dashboard" class="screen">
+        <img src="1000016084.jpg" class="bg">
+        <nav class="top-nav">
+            <span class="active">Home</span>
+            <span>Avatar</span>
+            <span>Discover</span>
+            <span>Friends</span>
+        </nav>
+        
+        <div class="main-content">
+            <!-- This button launches the URL from 2ee4712f-4aae-4b96-adf0-bce6aa8aaca6 -->
+            <button class="launch-btn" onclick="launchGame('13086985452')">
+                JOIN XBOX EXPERIENCE
+            </button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
